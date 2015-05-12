@@ -1,0 +1,18 @@
+Compiler Project 2012 FORT320 Language
+
+Instructions :
+1)	flex mylex_return.lex
+
+2)	bison -dv syntax.y
+
+3)	gcc -o output syntax.tab.c -lfl
+
+4)	./output<test.f
+
+Team:
+
+Όνομα				ΑΕΜ
+
+Μιμίδης Άγγελος		707
+Βάσωφ Θάνος			666
+Ζάββου Μυρτώ		989

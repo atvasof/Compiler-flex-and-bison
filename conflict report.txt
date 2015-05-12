@@ -1,0 +1,265 @@
+Χωρίς να δηλώσουμε προτεραιότητα και προσεταιριστικότητα εμφανίζονται οι εξής συγκρούσεις, οπως φαίνεται και στο αρχέιο output του bison όταν έχουμε το option -v:
+
+State 100 conflicts: 7 shift/reduce
+State 103 conflicts: 7 shift/reduce
+State 152 conflicts: 7 shift/reduce
+State 153 conflicts: 7 shift/reduce
+State 154 conflicts: 7 shift/reduce
+State 155 conflicts: 7 shift/reduce
+State 156 conflicts: 7 shift/reduce
+State 157 conflicts: 7 shift/reduce
+State 158 conflicts: 7 shift/reduce
+
+state 100 
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+              | ADDOP expression .
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 82 (expression)]
+    DIVOP     [reduce using rule 82 (expression)]
+    ADDOP     [reduce using rule 82 (expression)]
+    MULOP     [reduce using rule 82 (expression)]
+    ANDOP     [reduce using rule 82 (expression)]
+    POWEROP   [reduce using rule 82 (expression)]
+    RELOP     [reduce using rule 82 (expression)]
+    $default  reduce using rule 82 (expression)
+
+
+state 103
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+              | NOTOP expression .
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 81 (expression)]
+    DIVOP     [reduce using rule 81 (expression)]
+    ADDOP     [reduce using rule 81 (expression)]
+    MULOP     [reduce using rule 81 (expression)]
+    ANDOP     [reduce using rule 81 (expression)]
+    POWEROP   [reduce using rule 81 (expression)]
+    RELOP     [reduce using rule 81 (expression)]
+    $default  reduce using rule 81 (expression)
+
+
+
+state 152
+
+    expression: expression . OROP expression
+              | expression OROP expression .
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 74 (expression)]
+    DIVOP     [reduce using rule 74 (expression)]
+    ADDOP     [reduce using rule 74 (expression)]
+    MULOP     [reduce using rule 74 (expression)]
+    ANDOP     [reduce using rule 74 (expression)]
+    POWEROP   [reduce using rule 74 (expression)]
+    RELOP     [reduce using rule 74 (expression)]
+
+
+state 153
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression DIVOP expression .
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 79 (expression)]
+    DIVOP     [reduce using rule 79 (expression)]
+    ADDOP     [reduce using rule 79 (expression)]
+    MULOP     [reduce using rule 79 (expression)]
+    ANDOP     [reduce using rule 79 (expression)]
+    POWEROP   [reduce using rule 79 (expression)]
+    RELOP     [reduce using rule 79 (expression)]
+
+
+state 154
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression ADDOP expression .
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 77 (expression)]
+    DIVOP     [reduce using rule 77 (expression)]
+    ADDOP     [reduce using rule 77 (expression)]
+    MULOP     [reduce using rule 77 (expression)]
+    ANDOP     [reduce using rule 77 (expression)]
+    POWEROP   [reduce using rule 77 (expression)]
+    RELOP     [reduce using rule 77 (expression)]
+
+
+state 155
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression MULOP expression .
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 78 (expression)]
+    DIVOP     [reduce using rule 78 (expression)]
+    ADDOP     [reduce using rule 78 (expression)]
+    MULOP     [reduce using rule 78 (expression)]
+    ANDOP     [reduce using rule 78 (expression)]
+    POWEROP   [reduce using rule 78 (expression)]
+    RELOP     [reduce using rule 78 (expression)]
+
+
+state 156
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression ANDOP expression .
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 75 (expression)]
+    DIVOP     [reduce using rule 75 (expression)]
+    ADDOP     [reduce using rule 75 (expression)]
+    MULOP     [reduce using rule 75 (expression)]
+    ANDOP     [reduce using rule 75 (expression)]
+    POWEROP   [reduce using rule 75 (expression)]
+    RELOP     [reduce using rule 75 (expression)]
+
+
+state 157
+
+    expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+              | expression POWEROP expression .
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 80 (expression)]
+    DIVOP     [reduce using rule 80 (expression)]
+    ADDOP     [reduce using rule 80 (expression)]
+    MULOP     [reduce using rule 80 (expression)]
+    ANDOP     [reduce using rule 80 (expression)]
+    POWEROP   [reduce using rule 80 (expression)]
+    RELOP     [reduce using rule 80 (expression)]
+
+
+state 158
+
+   expression: expression . OROP expression
+              | expression . ANDOP expression
+              | expression . RELOP expression
+              | expression RELOP expression .
+              | expression . ADDOP expression
+              | expression . MULOP expression
+              | expression . DIVOP expression
+              | expression . POWEROP expression
+
+    OROP     shift, and go to state 108
+    DIVOP    shift, and go to state 109
+    ADDOP    shift, and go to state 110
+    MULOP    shift, and go to state 111
+    ANDOP    shift, and go to state 112
+    POWEROP  shift, and go to state 113
+    RELOP    shift, and go to state 114
+
+    OROP      [reduce using rule 76 (expression)]
+    DIVOP     [reduce using rule 76 (expression)]
+    ADDOP     [reduce using rule 76 (expression)]
+    MULOP     [reduce using rule 76 (expression)]
+    ANDOP     [reduce using rule 76 (expression)]
+    POWEROP   [reduce using rule 76 (expression)]
+    RELOP     [reduce using rule 76 (expression)]
